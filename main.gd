@@ -3,9 +3,11 @@ extends Node
 @export var mob_scene: PackedScene
 var score
 var life
+var bonus = 0
 
 func game_over():
 	$HUD.update_life(0)
+	$HUD.update_bonus(0)
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
@@ -17,10 +19,12 @@ func new_game():
 	get_tree().call_group(&"mobs", &"queue_free")
 	score = 0
 	life = 3
+	bonus = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.update_life(life)
+	$HUD.update_bonus(bonus)
 	$HUD.show_message("Get Ready")
 	$Music.play()
 	
@@ -53,9 +57,15 @@ func _on_MobTimer_timeout():
 
 func _on_ScoreTimer_timeout():
 	score += 1
+	if score>0 and score%10==0:
+		bonus+=1
+		$HUD.update_bonus(bonus)
 	$HUD.update_score(score)
-	$HUD.update_life($Player.life)
-
+	$HUD.update_life($Player.life + bonus)
+	$Player.life = $Player.life + bonus
+	bonus = 0
+	$HUD.update_bonus(bonus)
+	
 
 func _on_StartTimer_timeout():
 	$MobTimer.start()
