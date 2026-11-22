@@ -1,39 +1,22 @@
-## Dodge the Creeps: Enhanced Edition ##
+# Detailed publication project pages
 
-**Game link: https://indronil-prince.github.io/game.html**
+Four standalone research project pages, styled in the same dark, long-form academic direction as the existing MAML-KT website.
 
+## Files
+- `pulsar-inference/index.html`
+- `cultural-ai-tutor/index.html`
+- `memory-vs-attention/index.html`
+- `gloss-social-skills/index.html`
+- `assets/style.css` (shared stylesheet; **upload this too**)
+- `homepage-project-links.html` (optional homepage snippet)
 
-This version of "Dodge the Creeps" introduces several enhancements to the original game, aimed at 
-providing a more dynamic and rewarding gameplay experience. With the addition of multiple lives, bonus 
-lives, visual and audio feedback on being hit, players can enjoy a more engaging and slightly less punishing 
-game.
+## Deployment
+Upload the four named folders **and** `assets` into the repository root of `indronil-prince.github.io`. Do not put the parent folder `publication-project-pages-detailed` in the repository. Existing `MAML-KT` and `cold-start` folders remain unchanged.
 
-**Modifications**
+## Notes on provenance
+- Pulsar inference: source is arXiv:2602.14520v1, especially main tables 1–2 and methods. Posterior samples are approximate, not exact Bayesian samples.
+- CATS: source is the complete publicly readable ResearchGate manuscript. Numerical findings are *synthetic agent evaluations*, not human subject results. Cultural middleware is planned rather than evaluated.
+- LAK: source is the LAK25 companion proceedings paper (pp. 197–199; PDF viewer page depends on front matter) and its full indexed text. Model AUCs are presented as a comparison in the poster, not claimed as a newly run unified experiment.
+- AAAI: source is arXiv:2501.09870. It describes and demonstrates a system; user study effect sizes are not provided.
 
-### 1) Multiple Lives ###
-
-**• Lives Added:** Players now start the game with 3 lives instead of just 1. This change allows players 
-more opportunities to score higher without restarting the game after a single hit.
-
-**• Life Display:** Players start with 3 lives, displayed in a label at the top left corner of the screen, next 
-to the score label. This allows players to easily keep track of their remaining chances.
-
-### 2) Bonus Lives ###
-
-**• Scoring System:** For every 10 points earned, players receive an extra life. This is designed to reward 
-skill and longevity in the game.
-
-**• Bonus Feedback:** Whenever a bonus life is awarded, a "Bonus +1" message flashes at the top 
-middle of the screen for 1 second. This provides clear and immediate feedback that a bonus has 
-been earned.
-
-### 3) Visual and Audio Feedback on Hits ###
-
-**• Hit Feedback:** Upon being hit by a creep, the player's character will flash red for 1 second, 
-providing immediate visual feedback that a hit has occurred.
-
-**• Sound Effect:** A collision sound effect plays when the player is hit, enhancing the feedback loop 
-and helping players better understand the game's state without constantly watching the score or 
-lives counter
-
-### Read here: [readme.pdf](https://github.com/user-attachments/files/17139233/readme.pdf) ###
+Pages contain HTML/CSS diagrams, original summary tables and accessible responsive layouts. No external JS or CSS libraries are required. Links are absolute or site-root-relative as appropriate.
