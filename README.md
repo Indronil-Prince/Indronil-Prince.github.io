@@ -1,22 +1,22 @@
-# Detailed publication project pages
+# Detailed research project pages — publications 1–3
 
-Four standalone research project pages, styled in the same dark, long-form academic direction as the existing MAML-KT website.
+Three self-contained static HTML pages styled consistently with the earlier *publication-project-pages-detailed* bundle.
 
-## Files
-- `pulsar-inference/index.html`
-- `cultural-ai-tutor/index.html`
-- `memory-vs-attention/index.html`
-- `gloss-social-skills/index.html`
-- `assets/style.css` (shared stylesheet; **upload this too**)
-- `homepage-project-links.html` (optional homepage snippet)
+## Repository installation
 
-## Deployment
-Upload the four named folders **and** `assets` into the repository root of `indronil-prince.github.io`. Do not put the parent folder `publication-project-pages-detailed` in the repository. Existing `MAML-KT` and `cold-start` folders remain unchanged.
+Copy the directories `bangla-digit-recognition/`, `diabetic-retinopathy/`, `stock-price-prediction/` and the `assets/` folder into the root of `indronil-prince.github.io`.
 
-## Notes on provenance
-- Pulsar inference: source is arXiv:2602.14520v1, especially main tables 1–2 and methods. Posterior samples are approximate, not exact Bayesian samples.
-- CATS: source is the complete publicly readable ResearchGate manuscript. Numerical findings are *synthetic agent evaluations*, not human subject results. Cultural middleware is planned rather than evaluated.
-- LAK: source is the LAK25 companion proceedings paper (pp. 197–199; PDF viewer page depends on front matter) and its full indexed text. Model AUCs are presented as a comparison in the poster, not claimed as a newly run unified experiment.
-- AAAI: source is arXiv:2501.09870. It describes and demonstrates a system; user study effect sizes are not provided.
+If `assets/style.css` already exists from the earlier four-page bundle, you may replace it with the stylesheet in this ZIP: it contains the same base style and a few extra components for the new pages. Existing pages retain their styling. Do not delete your other project directories.
 
-Pages contain HTML/CSS diagrams, original summary tables and accessible responsive layouts. No external JS or CSS libraries are required. Links are absolute or site-root-relative as appropriate.
+Published routes:
+- https://indronil-prince.github.io/bangla-digit-recognition/
+- https://indronil-prince.github.io/diabetic-retinopathy/
+- https://indronil-prince.github.io/stock-price-prediction/
+
+Each page includes research overview, methodology, architecture/workflow visualization, reproduced numeric result tables (as HTML), discussion and BibTeX. Figures are illustrative reconstructions.
+
+## Source references and notes
+
+- Bangla CNN: https://doi.org/10.47577/technium.v18i.10243 — 31,130 original images, 155,650 augmented, 98.3% Ekush and 296/300 on extra samples. The paper does not clearly state whether augmentation occurs before/after the partition; the page flags that evaluation question.
+- Diabetic retinopathy: https://www.researchgate.net/publication/353015320_Diabetic_Retinopathy_Classification_from_Retinal_Images_using_Machine_Learning_Approaches — 13,402 fundus images, 10,052 / 3,350 split, three classifier metrics from the original report. Later open access arXiv upload is https://arxiv.org/abs/2412.02265.
+- Stock prediction: https://doi.org/10.1109/EICT48899.2019.9068850 — methods and MSE / MAPE values are from the original paper's Tables I–VIII. Clarified that same-day features vs lag-only statistical baselines differ in forecasting information.
