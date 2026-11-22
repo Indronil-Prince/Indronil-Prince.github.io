@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="Cold Start Problem: An Experimental Study of Knowledge Tracing Models with New Students. AIED 2025 research by Indronil Bhattacharjee and Christabel Wayllace.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Cold Start in Knowledge Tracing | AIED 2025">
+  <meta property="og:description" content="How do DKT, DKVMN and SAKT perform on entirely new students with only a few interactions?">
+  <meta property="og:url" content="https://indronil-prince.github.io/cold-start/">
+  <link rel="canonical" href="https://indronil-prince.github.io/cold-start/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>Cold Start Problem | AIED 2025</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><nav class="nav wrap" aria-label="Primary navigation">
+  <a class="brand" href="#top" aria-label="Cold Start project home"><span class="brand-mark">C<span>·</span>S</span><span>Cold<span class="brand-muted"> Start</span></span></a>
+  <div class="nav-links"><a href="#overview">Overview</a><a href="#method">Study design</a><a href="#results">Findings</a><a href="#publication">Publication</a></div>
+  <a class="nav-paper" href="https://doi.org/10.1007/978-3-031-98459-4_30" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+</nav></header>
+<main id="main">
+<section id="top" class="hero wrap">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="dot"></span> RESEARCH PROJECT <span class="eyebrow-sep">/</span> AIED 2025</div>
+    <h1>Every learner starts<br><em>with a first answer.</em></h1>
+    <p class="hero-subtitle">Cold Start Problem: An Experimental Study of Knowledge Tracing Models with New Students</p>
+    <p class="hero-intro">How well can knowledge tracing models predict a <strong>completely new student's</strong> responses when only a few early interactions are available? We evaluate three influential architectures under a realistic new-student protocol.</p>
+    <div class="hero-actions"><a class="btn btn-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-98459-4_30" target="_blank" rel="noopener noreferrer">Read published paper <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="https://arxiv.org/abs/2505.21517" target="_blank" rel="noopener noreferrer">Open preprint <span aria-hidden="true">↗</span></a></div>
+    <div class="hero-authors"><span class="author-avatar">IB</span><div><strong>Indronil Bhattacharjee</strong> <span class="and">&amp;</span> <strong>Christabel Wayllace</strong><div class="muted">New Mexico State University · Artificial Intelligence in Education 2025</div></div></div>
+  </div>
+  <div class="hero-visual" role="img" aria-label="Illustration: historical students supply model training data, a held-out new student answers a growing sequence of questions, and three KT models are compared">
+    <div class="visual-top"><span class="visual-kicker">THE CENTRAL QUESTION</span><span class="visual-chip">New-student generalization</span></div>
+    <svg viewBox="0 0 560 452" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4e6fea"/><stop offset="1" stop-color="#2caaa9"/></linearGradient><filter id="shadow" x="-30%" y="-50%" width="170%" height="200%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#15294a" flood-opacity=".12"/></filter></defs>
+      <text x="34" y="38" font-size="14" font-weight="700" fill="#61708b" letter-spacing="1.1">HISTORICAL STUDENTS · TRAIN</text>
+      <g transform="translate(35 58)"><rect width="492" height="100" rx="18" fill="#fff" stroke="#d9e1ee"/><g fill="#bfcdf4"><circle cx="49" cy="32" r="14"/><path d="M26 71c0-27 46-27 46 0"/></g><g fill="#b3e2d9"><circle cx="150" cy="32" r="14"/><path d="M127 71c0-27 46-27 46 0"/></g><g fill="#d9d2f3"><circle cx="251" cy="32" r="14"/><path d="M228 71c0-27 46-27 46 0"/></g><g fill="#f2d7a8"><circle cx="352" cy="32" r="14"/><path d="M329 71c0-27 46-27 46 0"/></g><text x="442" y="47" fill="#64738b" font-size="24" text-anchor="middle">···</text><text x="246" y="88" fill="#64738b" font-size="12" text-anchor="middle">Models learn from previous students</text></g>
+      <path d="M281 158V191" stroke="#9eb0c8" stroke-width="3"/><path d="M273 184l8 9 8-9" fill="none" stroke="#9eb0c8" stroke-width="3"/>
+      <rect x="97" y="196" width="365" height="64" rx="19" fill="url(#grad)" filter="url(#shadow)"/><text x="280" y="225" text-anchor="middle" fill="white" font-size="19" font-weight="800">DKT · DKVMN · SAKT</text><text x="280" y="246" text-anchor="middle" fill="#e6f6ff" font-size="13">Compare learned KT architectures</text>
+      <text x="34" y="306" font-size="14" font-weight="700" fill="#61708b" letter-spacing="1.1">HELD-OUT NEW STUDENTS · TEST</text>
+      <g transform="translate(36 326)"><rect width="488" height="87" rx="16" fill="#f1f6ff" stroke="#c8d7f0"/><circle cx="42" cy="31" r="14" fill="#86a9f0"/><path d="M19 68c0-28 46-28 46 0" fill="#86a9f0"/><text x="83" y="26" font-weight="700" font-size="15" fill="#243753">A completely new learner</text><text x="83" y="45" font-size="12" fill="#60718b">Observed responses grow over time</text><g transform="translate(84 57)"><rect width="45" height="18" rx="5" fill="#dbe7ff"/><text x="22" y="13" font-size="11" text-anchor="middle" fill="#365f9e">Q1</text><rect x="53" width="45" height="18" rx="5" fill="#dbe7ff"/><text x="75" y="13" font-size="11" text-anchor="middle" fill="#365f9e">Q2</text><rect x="106" width="45" height="18" rx="5" fill="#dbe7ff"/><text x="128" y="13" font-size="11" text-anchor="middle" fill="#365f9e">Q3</text><text x="177" y="14" font-size="19" fill="#64738b">→</text><rect x="208" width="85" height="18" rx="5" fill="#c8efe8"/><text x="250" y="13" font-size="11" text-anchor="middle" fill="#117d73">More history</text></g></g>
+      <text x="280" y="440" text-anchor="middle" font-size="13" fill="#64738b">How soon can predictions become reliable?</text>
+    </svg>
+    <p class="visual-foot">Train on the past. Test on entirely new learners.</p>
+  </div>
+</section>
+<div class="quick-bar"><div class="wrap quick-inner"><span><strong>Venue</strong> AIED 2025</span><span><strong>Publication</strong> LNCS / LNAI 15880</span><span><strong>Focus</strong> New-student cold start</span><span><strong>DOI</strong> <a href="https://doi.org/10.1007/978-3-031-98459-4_30">10.1007/978-3-031-98459-4_30 ↗</a></span></div></div>
+<section id="overview" class="section wrap split-section">
+  <div><div class="section-index">01 / OVERVIEW</div><h2>What happens when a student is <em>brand new?</em></h2></div>
+  <div class="section-copy"><p>Knowledge tracing predicts students' future correctness from their prior interactions with learning activities. But a newcomer has little interaction history. Models that perform well on familiar students may not generalize equally well at the start of a new student's learning journey.</p><p><strong>Our study isolates the new-student cold-start problem.</strong> Instead of mixing a student's early history into training, we train only on historical students and evaluate on completely held-out students. This better reflects the challenge of predicting for a learner who has just joined an intelligent tutoring system.</p><div class="callout"><span class="callout-symbol">“</span><span>Being accurate after a long history is not the same as being accurate <strong>from the beginning.</strong></span></div></div>
+</section>
+<section id="method" class="section section-tint"><div class="wrap">
+  <div class="section-index">02 / EXPERIMENTAL DESIGN</div><div class="section-head"><h2>A strict new-student evaluation</h2><p>Compare different KT architectures without using the test students' interactions to fit the models.</p></div>
+  <div class="process-grid">
+    <article class="step-card"><div class="step-number">01 <span>Training data</span></div><div class="step-icon">◎</div><h3>Historical learners</h3><p>Train KT models on student sequences from the historical cohort.</p></article>
+    <article class="step-card"><div class="step-number">02 <span>Separation</span></div><div class="step-icon">▥</div><h3>Unseen students</h3><p>Keep evaluated students entirely separate from model training.</p></article>
+    <article class="step-card"><div class="step-number">03 <span>Baselines</span></div><div class="step-icon">≋</div><h3>Three model families</h3><p>Study recurrent DKT, memory-based DKVMN and attention-based SAKT.</p></article>
+    <article class="step-card"><div class="step-number">04 <span>Evaluation</span></div><div class="step-icon">↗</div><h3>Growing histories</h3><p>Assess predictions as each new student accumulates additional answers.</p></article>
+  </div>
+  <div class="sequence-panel"><div class="sequence-title"><div><h3>Student-disjoint train / test protocol</h3><p>Historical student data are used to fit the models; new-student responses are used for evaluation as the available history grows.</p></div><span>Conceptual illustration</span></div>
+    <div class="sequence-track" aria-label="Historical students used for training, followed by entirely new students evaluated on early questions"><div class="sequence-block support"><span>Train A</span><span>Train B</span><span>Train C</span></div><div class="sequence-boundary"><span>HOLD OUT</span><i></i></div><div class="sequence-block query"><span>New 1</span><span>New 2</span><span>New 3</span></div></div>
+    <div class="sequence-labels"><span>TRAINING · Historical students</span><span>EVALUATION · Different students</span></div>
+  </div>
+</div></section>
+<section id="results" class="section wrap">
+  <div class="section-index">03 / FINDINGS</div><div class="section-head"><h2>What the comparison revealed</h2><p>Evaluation spans three ASSISTments datasets and three widely used deep KT architectures.</p></div>
+  <div class="stat-row"><div><span class="stat-num">3</span><span class="stat-caption">ASSISTments datasets · 2009, 2015, 2017</span></div><div><span class="stat-num">3</span><span class="stat-caption">Model architectures · DKT, DKVMN, SAKT</span></div><div><span class="stat-num">New</span><span class="stat-caption">Held-out students, not seen in training</span></div></div>
+  <div class="results-grid">
+    <article class="result-card"><span class="result-overline">EARLY INTERACTIONS</span><div class="result-range">A difficult <strong>start</strong></div><p>All three models face challenges when making predictions with little student-specific evidence. Cold-start evaluation exposes this weakness.</p><div class="result-marker"><span class="marker-dot marker-blue"></span> Short histories are especially challenging.</div></article>
+    <article class="result-card"><span class="result-overline">AS HISTORY GROWS</span><div class="result-range">Gradual <strong>improvement</strong></div><p>Prediction performance generally improves as more interactions become available. SAKT shows comparatively strong early accuracy, but it also has limitations.</p><div class="result-marker"><span class="marker-dot marker-teal"></span> More evidence helps, but does not erase the problem.</div></article>
+  </div>
+  <div class="insight"><div class="insight-icon">→</div><div><strong>Research direction: learn to adapt quickly</strong><p>The findings motivate methods built specifically for new-student generalization and few-shot adaptation. Our subsequent <a href="../MAML-KT/" style="color:#4167d8;text-decoration:underline">MAML-KT project</a> explores this direction.</p></div></div>
+</section>
+<section id="publication" class="section publication-section"><div class="wrap publication-grid">
+  <div><div class="section-index">04 / PUBLICATION</div><h2>Read the research</h2><p class="publication-sub">Peer-reviewed conference paper · Artificial Intelligence in Education 2025</p><div class="paper-card"><div class="paper-label">PUBLISHED PAPER</div><h3>Cold Start Problem: An Experimental Study of Knowledge Tracing Models with New Students</h3><p>Indronil Bhattacharjee and Christabel Wayllace</p><p class="paper-meta">Artificial Intelligence in Education (AIED 2025), Lecture Notes in Computer Science / LNAI, vol. 15880, pp. 425–432. Springer.</p><div class="paper-links"><a class="btn btn-primary" href="https://link.springer.com/chapter/10.1007/978-3-031-98459-4_30" target="_blank" rel="noopener noreferrer">Springer chapter ↗</a><a class="btn btn-outline" href="https://arxiv.org/abs/2505.21517" target="_blank" rel="noopener noreferrer">Open preprint ↗</a></div></div></div>
+  <div class="citation-box"><div class="citation-top"><h3>Cite this work</h3><button id="copyBib" type="button" aria-label="Copy BibTeX citation">Copy BibTeX <span>⧉</span></button></div><pre id="bibtex"><code>@inproceedings{bhattacharjee2025coldstart,
+  title     = {Cold Start Problem: An
+               Experimental Study of Knowledge
+               Tracing Models with New Students},
+  author    = {Bhattacharjee, Indronil and
+               Wayllace, Christabel},
+  booktitle = {Artificial Intelligence
+               in Education},
+  volume    = {15880},
+  pages     = {425--432},
+  year      = {2025},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-98459-4_30}
+}</code></pre><p class="citation-note">For citation formats and reference-manager exports, visit the Springer chapter page.</p></div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div><div class="footer-brand">Cold<span> Start</span></div><p>Studying the first steps of student knowledge tracing.</p></div><div class="footer-links"><a href="https://indronil-prince.github.io/">Home ↗</a><a href="https://github.com/Indronil-Prince" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://doi.org/10.1007/978-3-031-98459-4_30" target="_blank" rel="noopener noreferrer">DOI ↗</a></div><small>© 2026 Indronil Bhattacharjee · Research project page</small></div></footer>
+<script src="assets/script.js" defer></script>
+</body></html>
