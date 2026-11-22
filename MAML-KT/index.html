@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f9fc">
+  <meta name="description" content="MAML-KT: few-shot meta-learning for rapid personalization in knowledge tracing. AIED 2026 research by Indronil Bhattacharjee and Christabel Wayllace.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MAML-KT | Few-Shot Meta-Learning for Cold-Start Knowledge Tracing">
+  <meta property="og:description" content="Learning to adapt to a new student from only a few interactions. AIED 2026.">
+  <meta property="og:url" content="https://indronil-prince.github.io/maml-kt/">
+  <link rel="canonical" href="https://indronil-prince.github.io/maml-kt/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>MAML-KT | AIED 2026</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="nav wrap" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="MAML-KT home"><span class="brand-mark">M<span>·</span>K</span><span>MAML<span class="brand-muted">-KT</span></span></a>
+    <div class="nav-links">
+      <a href="#overview">Overview</a><a href="#method">Method</a><a href="#results">Findings</a><a href="#publication">Publication</a>
+    </div>
+    <a class="nav-paper" href="https://doi.org/10.1007/978-3-032-29760-0_16" target="_blank" rel="noopener noreferrer">Read the paper <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="main">
+  <section id="top" class="hero wrap">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="dot"></span> RESEARCH PROJECT <span class="eyebrow-sep">/</span> AIED 2026</div>
+      <h1>Learning to adapt.<br><em>From the first few answers.</em></h1>
+      <p class="hero-subtitle">MAML-KT: Addressing Cold Start Problem in Knowledge Tracing for New Students via Few-Shot Model-Agnostic Meta Learning</p>
+      <p class="hero-intro">A meta-learning approach that makes knowledge tracing more responsive to <strong>previously unseen students</strong>—by learning model parameters that can personalize with only a small number of observed interactions.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://link.springer.com/chapter/10.1007/978-3-032-29760-0_16" target="_blank" rel="noopener noreferrer">Read published paper <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-outline" href="https://arxiv.org/abs/2603.00137" target="_blank" rel="noopener noreferrer">View preprint <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="hero-authors"><span class="author-avatar">IB</span><div><strong>Indronil Bhattacharjee</strong> <span class="and">&amp;</span> <strong>Christabel Wayllace</strong><div class="muted">New Mexico State University · Artificial Intelligence in Education 2026</div></div></div>
+    </div>
+    <div class="hero-visual" role="img" aria-label="Diagram: historical students produce a shared meta-initialization, which adapts from a few answers to a new student and predicts future responses">
+      <div class="visual-top"><span class="visual-kicker">THE CENTRAL IDEA</span><span class="visual-chip">Few-shot adaptation</span></div>
+      <svg viewBox="0 0 560 452" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs><linearGradient id="grad" x1="0" x2="1"><stop stop-color="#4e6fea"/><stop offset="1" stop-color="#2caaa9"/></linearGradient><filter id="shadow" x="-20%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#15294a" flood-opacity=".12"/></filter></defs>
+        <text x="36" y="40" font-size="14" font-weight="700" fill="#61708b" letter-spacing="1.1">META-TRAINING</text>
+        <g transform="translate(40 64)">
+          <rect width="140" height="92" rx="16" fill="#fff" stroke="#d9e1ee"/>
+          <circle cx="30" cy="27" r="12" fill="#c6d3ff"/><path d="M12 61c0-18 36-18 36 0" fill="#c6d3ff"/><path d="M63 27h56 M63 43h45 M63 59h52" stroke="#bbc8dc" stroke-width="5" stroke-linecap="round"/>
+          <text x="70" y="78" font-size="12" fill="#52647f">Student A</text>
+        </g>
+        <g transform="translate(202 64)">
+          <rect width="140" height="92" rx="16" fill="#fff" stroke="#d9e1ee"/>
+          <circle cx="30" cy="27" r="12" fill="#b4e6df"/><path d="M12 61c0-18 36-18 36 0" fill="#b4e6df"/><path d="M63 27h56 M63 43h45 M63 59h52" stroke="#bbc8dc" stroke-width="5" stroke-linecap="round"/>
+          <text x="70" y="78" font-size="12" fill="#52647f">Student B</text>
+        </g>
+        <g transform="translate(364 64)">
+          <rect width="140" height="92" rx="16" fill="#fff" stroke="#d9e1ee"/>
+          <circle cx="30" cy="27" r="12" fill="#d8d0f7"/><path d="M12 61c0-18 36-18 36 0" fill="#d8d0f7"/><path d="M63 27h56 M63 43h45 M63 59h52" stroke="#bbc8dc" stroke-width="5" stroke-linecap="round"/>
+          <text x="70" y="78" font-size="12" fill="#52647f">Student C</text>
+        </g>
+        <path d="M110 156V185H272V209 M272 156V209 M434 156V185H272" stroke="#a8b8d0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <path d="M264 202l8 9 8-9" fill="none" stroke="#a8b8d0" stroke-width="2.5"/>
+        <rect x="135" y="213" width="274" height="74" rx="20" fill="url(#grad)" filter="url(#shadow)"/>
+        <text x="272" y="243" font-size="19" fill="white" font-weight="800" text-anchor="middle">Shared initialization</text>
+        <text x="272" y="266" font-size="13" fill="#eaf4ff" text-anchor="middle">Learns how to adapt quickly</text>
+        <path d="M272 288V309" stroke="#8fa5c2" stroke-width="2.5"/><path d="M264 305l8 9 8-9" fill="none" stroke="#8fa5c2" stroke-width="2.5"/>
+        <text x="36" y="336" font-size="14" font-weight="700" fill="#61708b" letter-spacing="1.1">META-TESTING</text>
+        <g transform="translate(38 351)"><rect width="137" height="70" rx="15" fill="#eff4ff" stroke="#c7d5f4"/><text x="69" y="27" font-size="14" font-weight="800" fill="#264b97" text-anchor="middle">New student</text><text x="69" y="48" font-size="12" fill="#52647f" text-anchor="middle">Few responses</text></g>
+        <path d="M177 387H199" stroke="#9fb1c9" stroke-width="2.5"/><path d="M195 379l9 8-9 8" fill="none" stroke="#9fb1c9" stroke-width="2.5"/>
+        <g transform="translate(207 351)"><rect width="142" height="70" rx="15" fill="#e9faf6" stroke="#b8e5da"/><text x="71" y="27" font-size="14" font-weight="800" fill="#137f72" text-anchor="middle">Fast adaptation</text><text x="71" y="48" font-size="12" fill="#52647f" text-anchor="middle">Student-specific</text></g>
+        <path d="M352 387H374" stroke="#9fb1c9" stroke-width="2.5"/><path d="M370 379l9 8-9 8" fill="none" stroke="#9fb1c9" stroke-width="2.5"/>
+        <g transform="translate(380 351)"><rect width="142" height="70" rx="15" fill="#fff" stroke="#d9e1ee"/><text x="71" y="27" font-size="14" font-weight="800" fill="#243753" text-anchor="middle">Next responses</text><text x="71" y="48" font-size="12" fill="#52647f" text-anchor="middle">Better early fit</text></g>
+      </svg>
+      <p class="visual-foot">Train on many learners. Adapt to one learner.</p>
+    </div>
+  </section>
+
+  <div class="quick-bar"><div class="wrap quick-inner"><span><strong>Venue</strong> AIED 2026</span><span><strong>Publication</strong> LNCS / LNAI 16583</span><span><strong>Focus</strong> New-student cold start</span><span><strong>DOI</strong> <a href="https://doi.org/10.1007/978-3-032-29760-0_16">10.1007/978-3-032-29760-0_16 ↗</a></span></div></div>
+
+  <section id="overview" class="section wrap split-section">
+    <div><div class="section-index">01 / OVERVIEW</div><h2>Accurate predictions need to start <em>early.</em></h2></div>
+    <div class="section-copy"><p>Knowledge tracing estimates what a student knows by observing responses to educational questions. Conventional deep KT methods often learn one set of parameters across historical students. But a new learner starts with almost no history, precisely when early estimates can matter for instructional decisions.</p><p><strong>MAML-KT changes the optimization goal.</strong> Rather than focusing solely on average training performance, it meta-learns an initialization designed to improve after a few updates on the new student's earliest responses.</p><div class="callout"><span class="callout-symbol">“</span><span>Instead of only learning to predict, the model learns <strong>to adapt</strong>.</span></div></div>
+  </section>
+
+  <section id="method" class="section section-tint"><div class="wrap">
+    <div class="section-index">02 / APPROACH</div><div class="section-head"><h2>How MAML-KT works</h2><p>A student-centered adaptation process designed around the natural order of learning interactions.</p></div>
+    <div class="process-grid">
+      <article class="step-card"><div class="step-number">01 <span>Task definition</span></div><div class="step-icon">◎</div><h3>One student, one task</h3><p>Each historical student's question–response trajectory forms a separate meta-learning task.</p></article>
+      <article class="step-card"><div class="step-number">02 <span>Sequential split</span></div><div class="step-icon">▥</div><h3>Support then query</h3><p>Early interactions become the support set; later responses become the query set, preserving chronology.</p></article>
+      <article class="step-card"><div class="step-number">03 <span>Inner loop</span></div><div class="step-icon">↻</div><h3>Adapt quickly</h3><p>Starting from shared parameters, a few gradient steps tailor a GRU-based KT model to each learner.</p></article>
+      <article class="step-card"><div class="step-number">04 <span>Outer loop</span></div><div class="step-icon">↗</div><h3>Learn to adapt better</h3><p>Loss on the remaining interactions improves the shared initialization across student tasks.</p></article>
+    </div>
+    <div class="sequence-panel">
+      <div class="sequence-title"><div><h3>Chronological few-shot episode</h3><p>Support comes first. The query never informs the student's adaptation step.</p></div><span>Example structure, not experimental data</span></div>
+      <div class="sequence-track" aria-label="Example sequence with four support interactions followed by five query interactions">
+        <div class="sequence-block support"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div><div class="sequence-boundary"><span>ADAPT</span><i></i></div><div class="sequence-block query"><span>Q5</span><span>Q6</span><span>Q7</span><span>Q8</span><span>Q9</span></div>
+      </div><div class="sequence-labels"><span>SUPPORT · Observed answers</span><span>QUERY · Evaluate future predictions</span></div>
+    </div>
+  </div></section>
+
+  <section id="results" class="section wrap">
+    <div class="section-index">03 / EVALUATION & FINDINGS</div><div class="section-head"><h2>Evidence from unseen students</h2><p>The study compares MAML-KT against DKT, DKVMN and SAKT under held-out new-student evaluation.</p></div>
+    <div class="stat-row"><div><span class="stat-num">3</span><span class="stat-caption">ASSISTments datasets</span></div><div><span class="stat-num">10 · 20 · 50</span><span class="stat-caption">New-student cohort sizes</span></div><div><span class="stat-num">5</span><span class="stat-caption">Random sets per condition</span></div></div>
+    <div class="results-grid"><article class="result-card"><span class="result-overline">CRITICAL COLD START</span><div class="result-range">Questions <strong>3–10</strong></div><p>MAML-KT achieves higher early prediction accuracy than conventional KT models in nearly all examined cold-start conditions.</p><div class="result-marker"><span class="marker-dot marker-blue"></span> The smallest histories are the key test.</div></article><article class="result-card"><span class="result-overline">MODERATE COLD START</span><div class="result-range">Questions <strong>11–15</strong></div><p>Rapid personalization remains competitive as more responses become available, although attention-based models sometimes narrow the gap.</p><div class="result-marker"><span class="marker-dot marker-teal"></span> Gains extend beyond the first few questions.</div></article></div>
+    <div class="insight"><div class="insight-icon">!</div><div><strong>Where adaptation is harder</strong><p>Accuracy can briefly fluctuate when a learner encounters skills that were not present in the adaptation examples. This motivates future skill-aware and novelty-aware adaptation.</p></div></div>
+  </section>
+
+  <section id="publication" class="section publication-section"><div class="wrap publication-grid">
+    <div><div class="section-index">04 / PUBLICATION</div><h2>Read the research</h2><p class="publication-sub">Peer-reviewed conference paper · Artificial Intelligence in Education 2026</p><div class="paper-card"><div class="paper-label">PUBLISHED PAPER</div><h3>MAML-KT: Addressing Cold Start Problem in Knowledge Tracing for New Students via Few-Shot Model-Agnostic Meta Learning</h3><p>Indronil Bhattacharjee and Christabel Wayllace</p><p class="paper-meta">Artificial Intelligence in Education (AIED 2026), Lecture Notes in Computer Science / LNAI, vol. 16583, pp. 141–149.</p><div class="paper-links"><a class="btn btn-primary" href="https://link.springer.com/chapter/10.1007/978-3-032-29760-0_16" target="_blank" rel="noopener noreferrer">Springer chapter ↗</a><a class="btn btn-outline" href="https://arxiv.org/abs/2603.00137" target="_blank" rel="noopener noreferrer">Open preprint ↗</a></div></div></div>
+    <div class="citation-box"><div class="citation-top"><h3>Cite this work</h3><button id="copyBib" type="button" aria-label="Copy BibTeX citation">Copy BibTeX <span>⧉</span></button></div><pre id="bibtex"><code>@inproceedings{bhattacharjee2026mamlkt,
+  title     = {MAML-KT: Addressing Cold Start
+               Problem in Knowledge Tracing for
+               New Students via Few-Shot
+               Model-Agnostic Meta Learning},
+  author    = {Bhattacharjee, Indronil and
+               Wayllace, Christabel},
+  booktitle = {Artificial Intelligence
+               in Education},
+  pages     = {141--149},
+  year      = {2026},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-032-29760-0_16}
+}</code></pre><p class="citation-note">For reference managers, use the citation tools on the Springer page.</p></div>
+  </div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div><div class="footer-brand">MAML<span>-KT</span></div><p>Few-shot personalization in knowledge tracing.</p></div><div class="footer-links"><a href="https://indronil-prince.github.io/">Home ↗</a><a href="https://github.com/Indronil-Prince" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://doi.org/10.1007/978-3-032-29760-0_16" target="_blank" rel="noopener noreferrer">DOI ↗</a></div><small>© 2026 Indronil Bhattacharjee · Research project page</small></div></footer>
+<script src="assets/script.js" defer></script>
+</body>
+</html>
